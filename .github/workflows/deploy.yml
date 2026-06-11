@@ -40,5 +40,6 @@ jobs:
             --name financiero-service \
             --resource-group $RESOURCE_GROUP \
             --image $ACR_SERVER/financiero-service:latest \
+            --set-env-vars "RABBITMQ_URL=${{ secrets.RABBITMQ_URL }}" \
             --output none
           echo "financiero-service desplegado ✓"
